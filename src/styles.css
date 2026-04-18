@@ -1,0 +1,226 @@
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(255, 197, 61, 0.22), transparent 30%),
+    linear-gradient(180deg, #10212e 0%, #17364a 45%, #f3ede2 45%, #f8f4ec 100%);
+  color: #10212e;
+  font-family: "Lato", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  padding: 24px 24px 16px;
+}
+
+.topbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 28px;
+  background: rgba(9, 22, 31, 0.76);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 28px 70px rgba(6, 15, 22, 0.32);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #f7c962;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.brand-block h1 {
+  margin: 0;
+  color: #f7f4ec;
+  font-size: clamp(2rem, 3vw, 3.4rem);
+  line-height: 1;
+}
+
+.brand-copy {
+  margin: 10px 0 0;
+  max-width: 42rem;
+  color: rgba(247, 244, 236, 0.8);
+  font-size: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.nav-link {
+  padding: 10px 16px;
+  border: 1px solid rgba(247, 244, 236, 0.14);
+  border-radius: 999px;
+  color: #f7f4ec;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  transform: translateY(-1px);
+  border-color: rgba(247, 201, 98, 0.55);
+  background: rgba(247, 201, 98, 0.12);
+}
+
+.nav-link.is-active {
+  border-color: #f7c962;
+  background: #f7c962;
+  color: #10212e;
+}
+
+.app-main {
+  flex: 1;
+  min-height: 0;
+  padding: 0 24px 24px;
+}
+
+.page-panel {
+  max-width: 1200px;
+  min-height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-copy h2 {
+  margin: 0;
+  color: #f7f4ec;
+  font-size: clamp(1.8rem, 2vw, 2.4rem);
+  text-shadow: 0 10px 24px rgba(6, 15, 22, 0.24);
+}
+
+.page-copy p {
+  margin: 8px 0 0;
+  color: rgba(247, 244, 236, 0.84);
+  font-size: 1rem;
+  line-height: 1.5;
+  text-shadow: 0 8px 20px rgba(6, 15, 22, 0.18);
+}
+
+.demo-shell {
+  min-height: 0;
+  border: 1px solid rgba(16, 33, 45, 0.08);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 24px 60px rgba(16, 33, 45, 0.12);
+}
+
+.scroll-shell {
+  overflow: auto;
+  padding: 24px;
+}
+
+.tree-shell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  overflow: auto;
+}
+
+.tree-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 10px 0 18px;
+}
+
+.tree-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.tree-control label {
+  color: #0f1f2b;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.tree-control select {
+  min-width: 180px;
+  padding: 10px 12px;
+  border: 1px solid rgba(15, 31, 43, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #10212e;
+  font: inherit;
+}
+
+.tree-control select:disabled {
+  opacity: 0.65;
+}
+
+.vertex-shell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(34, 226, 208, 0.18), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(247, 201, 98, 0.16), transparent 22%),
+    #06131a;
+}
+
+.vertex-shell canvas {
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.38);
+}
+
+@media (max-width: 768px) {
+  .topbar,
+  .app-main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .topbar-inner,
+  .scroll-shell,
+  .tree-shell,
+  .vertex-shell {
+    padding: 18px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
